@@ -83,7 +83,7 @@ async def id(bot, update):
         reply_markup=BUTTONS
     )
 
-@Client.on_message(filters.command(["stickerid"]))
+@Bot.on_message(filters.command(["stickerid"]))
 async def stickerid(bot, message):   
     if message.reply_to_message.sticker:
        await message.reply(f"**Sticker ID is**  \n `{message.reply_to_message.sticker.file_id}` \n \n ** Unique ID is ** \n\n`{message.reply_to_message.sticker.file_unique_id}`", quote=True)
@@ -91,7 +91,7 @@ async def stickerid(bot, message):
        await message.reply("Oops !! Not a sticker file")
 
 
-@Client.on_message(filters.command(["json", 'mhjs', 'showjson']))
+@Bot.on_message(filters.command(["json", 'mhjs', 'showjson']))
 async def jsonify(_, message):
     the_real_message = None
     reply_to_id = None

@@ -49,7 +49,7 @@ BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"ht
 
 @Bot.on_message(filters.private & filters.command("start"))
 async def start(bot, update):
-    await update.reply_text(
+    await update.reply_photo(
         photo="https://telegra.ph/file/236794ce4bb2213eaae1e.jpg",
         caption=START_TEXT.format(update.from_user.mention),
         reply_markup=BUTTONS

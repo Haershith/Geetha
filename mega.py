@@ -17,21 +17,30 @@ Fᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴄʟɪᴄᴋ /help
 
 Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ<b>"""
 
-HELP_TEXT = """💞 How to Use Me Harshith
-• Send Me a file and reply by /mhinfo
-• Send any Media to take its Details
-• Reply /mhinfo to a Message to take Message Details
-• Use /mhinfo Command to take your Details
-• Use /mhid in Group or Channel to get Unique Telegram ID"""
+HELP_TEXT = """**💞 Hᴏᴡ ᴛᴏ Usᴇ 💞**
+I ᴄᴀɴ ʜᴇʟᴘ ᴄᴀɴ Fᴇᴛᴄʜ ɪᴅ ᴏғ ʏᴏᴜ
+Iᴅ ʜᴇʟᴘs ᴛᴏ ғɪɴᴅ ᴀɴʏ ᴏғ ʏᴏᴜ
+Yᴏᴜ ᴄᴀɴ ᴀʟsᴏ ᴀᴅᴅ ᴛᴏ ɢʀᴏᴜᴘ
 
-ABOUT_TEXT = """--**About You From MHiNFoBoT**--
-- **Bot :** `Info Bot`
-- **Creator :** [Harshith](https://t.me/MutyalaHarshith)
-- **Deploy OwN :** [Tutorial]()
-- **Join :** [MHGcHaT](https://t.me/MHGcHaT)
-- **Language :** [Python3](https://python.org)
-- **Library :** [Pyrogram v1.2.0](https://pyrogram.org)
-- **Server :** [Okteto](https://heroku.com)"""
+Cʟɪᴄᴋ /ɪɴғᴏ ᴏғ ᴛᴏ ɢᴇᴛ 👇👇
+• Iᴅ & ɪɴғᴏ
+• Usᴇʀɴᴀᴍᴇ ᴏғ ʏᴏᴜ
+• Jsᴏɴ ғɪʟᴇs ᴏғ ʏᴏᴜʀsᴇʟғ
+• Tᴏ ɢᴇᴛ sᴛɪᴄᴋᴇʀ ɪᴅ ᴀɴᴅ Uɴɪǫᴜᴇ ID
+
+
+Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ
+"""
+
+ABOUT_TEXT = """--**About Youself**--
+• **Bot NamE:** [MH Info Bot](https://t.me/MutyalaBoT)
+• **Creator :** [Mutyala Harshith](https://t.me/MutyalaHarshith)
+• **GitHub** : [Follow](https://GitHub.com/MutyalaHarshith)
+• **Source** : [MHiNFoBoT](https://github.com/TeleGraMaN/MHiNFoBoT)
+• **Support** : [MHGcHaT](https://t.me/MHGcHaT)
+• **Language :** [Python3](https://python.org)
+• **Library :** [Pyrogram v1.2.0](https://pyrogram.org)
+• **Server :** [Heroku](https://heroku.com)"""
 
 BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/MutyalaHarshith"),
                                  InlineKeyboardButton(text="Support", url=f"https://t.me/MHGcHaT")],

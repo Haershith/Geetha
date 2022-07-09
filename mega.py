@@ -32,15 +32,15 @@ Cʟɪᴄᴋ /ɪɴғᴏ ᴏғ ᴛᴏ ɢᴇᴛ 👇👇
 Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ
 """
 
-ABOUT_TEXT = """--**About Youself**--
-• **Bot NamE:** [MH Info Bot](https://t.me/MutyalaBoT)
-• **Creator :** [Mutyala Harshith](https://t.me/MutyalaHarshith)
-• **GitHub** : [Follow](https://GitHub.com/MutyalaHarshith)
-• **Source** : [MHiNFoBoT](https://github.com/TeleGraMaN/MHiNFoBoT)
-• **Support** : [MHGcHaT](https://t.me/MHGcHaT)
-• **Language :** [Python3](https://python.org)
-• **Library :** [Pyrogram v1.2.0](https://pyrogram.org)
-• **Server :** [Heroku](https://heroku.com)"""
+ABOUT_TEXT = """**Aʙᴏᴜᴛ Yᴏᴜsᴇʟғ**
+• **Bᴏᴛ ɴᴀᴍᴇ:** [MHɪNFᴏBᴏT](https://t.me/MutyalaBoT)
+• **Cʀᴇᴀᴛᴏʀ :** [Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ](https://t.me/MutyalaHarshith)
+• **GɪᴛHᴜʙ** : [Fᴏʟʟᴏᴡ](https://GitHub.com/MutyalaHarshith)
+• **Sᴏᴜʀᴄᴇ** : [MHɪNFᴏBᴏT](https://github.com/TeleGraMaN/MHiNFoBoT)
+• **Sᴜᴘᴘᴏʀᴛ** : [ᴍʜɢᴄʜᴀᴛ](https://t.me/MHGcHaT)
+• **Lᴀɴɢᴜᴀɢᴇ :** [Pʏᴛʜᴏɴ 𝟹](https://python.org)
+• **Lɪʙʀᴀʀʏ :** [Pʏʀᴏɢʀᴀᴍ ᴠ𝟷.𝟸.𝟶](https://pyrogram.org)
+• **Sᴇʀᴠᴇʀ :** [Hᴇʀᴏᴋᴜ](https://heroku.com)"""
 
 BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/MutyalaHarshith"),
                                  InlineKeyboardButton(text="Support", url=f"https://t.me/MHGcHaT")],
@@ -50,8 +50,8 @@ BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"ht
 @Bot.on_message(filters.private & filters.command("start"))
 async def start(bot, update):
     await update.reply_text(
-        text=START_TEXT.format(update.from_user.mention),
-        disable_web_page_preview=True,
+        photo="https://telegra.ph/file/236794ce4bb2213eaae1e.jpg"
+        caption=START_TEXT.format(update.from_user.mention),
         reply_markup=BUTTONS
     )
 

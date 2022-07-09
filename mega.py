@@ -29,7 +29,10 @@ ABOUT_TEXT = """--**About You From MHiNFoBoT**--
 - **Library :** [Pyrogram v1.2.0](https://pyrogram.org)
 - **Server :** [Okteto](https://heroku.com)"""
 
-BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/MutyalaHarshith")]])
+BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/MutyalaHarshith"),
+                                 InlineKeyboardButton(text="Support", url=f"https://t.me/MHGcHaT")]
+                                [InlineKeyboardButton(text="Share BoT", url=f"https://t.me/share/url?url=https%3A//t.me/MutyalaBoT),
+                                 InlineKeyboardButton(text="Group', url=f"http://t.me/MutyalaBoT?startgroup=true)])
 
 @Bot.on_message(filters.private & filters.command("start"))
 async def start(bot, update):

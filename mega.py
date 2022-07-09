@@ -10,8 +10,12 @@ Bot = Client(
     api_hash=os.environ.get("API_HASH")
 )
 
-START_TEXT = """<b>Hello {}
-I am a Simple Telegram Info Bot, Click /help for more information<b>"""
+START_TEXT = """<b>𝙷𝚎𝚕𝚕𝚘 {}
+I ᴀᴍ Iᴅ Fᴇᴛᴄʜ Bᴏᴛ ʙʏ Hᴀʀsʜɪᴛʜ
+I ᴄᴀɴ sʜᴏᴡ ʏᴏᴜʀ ɪᴅ & ɪɴғᴏ
+Fᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴄʟɪᴄᴋ /help
+
+Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ<b>"""
 
 HELP_TEXT = """💞 How to Use Me Harshith
 • Send Me a file and reply by /mhinfo

@@ -151,7 +151,7 @@ async def jsonify(_, message):
 
 
 
-@bot.on_message(filters.command("telegraph"))
+@Bot.on_message(filters.command("telegraph"))
 async def telegraph(client, message):
     replied = message.reply_to_message
     if not replied:

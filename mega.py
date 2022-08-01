@@ -1,7 +1,6 @@
 import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from telegraph import upload_file
 
 Bot = Client(
     "Info Bot",

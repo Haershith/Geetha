@@ -83,7 +83,7 @@ async def info(bot, update):
 **🥳 Your Username :** {update.from_user.username}
 **😜 Your Telegram ID :** {update.from_user.id}
 **🤫 Your Profile Link :** {update.from_user.mention}
-** Bio :** {update.from_user.language}
+** Bio :** {update.from_user.mention}
 ** Lang code :** {update.from_user.language_code}
 ** Language :** {update.from_user.full_name} """
     

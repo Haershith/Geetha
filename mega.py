@@ -82,7 +82,10 @@ async def info(bot, update):
 **😎 Your Second Name :** {update.from_user.last_name if update.from_user.last_name else 'None'}
 **🥳 Your Username :** {update.from_user.username}
 **😜 Your Telegram ID :** {update.from_user.id}
-**🤫 Your Profile Link :** {update.from_user.mention}"""
+**🤫 Your Profile Link :** {update.from_user.mention}
+** Bio :** {update.from_user.bio}
+** Lang code :** {update.from_user.language_code}
+** Language :** {update.from_user.language} """
     
     await update.reply_text(        
         text=text,

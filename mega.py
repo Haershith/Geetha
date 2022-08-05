@@ -85,7 +85,7 @@ async def info(bot, update):
 **🤫 Your Profile Link :** {update.from_user.mention}
 ** Bio :** {update.from_user.mention}
 ** Lang code :** {update.from_user.language_code}
-** Language :** {update.from_user.full_name} """
+** Language :** {update.from_user.first_name} """
     
     await update.reply_text(        
         text=text,
@@ -190,7 +190,7 @@ async def telegraph(client, message):
     else:
         await message.reply(
             f"**Uploaded To Telegraph!\n\n👉 https://telegra.ph{response[0]}**",
-            disable_web_page_preview=True,
+            disable_web_page_preview=false,
         )
     finally:
         os.remove(download_location)

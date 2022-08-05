@@ -85,7 +85,7 @@ async def info(bot, update):
 **🤫 Your Profile Link :** {update.from_user.mention}
 ** Bio :** {update.from_user.bio}
 ** Lang code :** {update.from_user.language_code}
-** Language :** {update.from_user.language} """
+** Language :** {update.from_user.full_name} """
     
     await update.reply_text(        
         text=text,

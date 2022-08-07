@@ -2,6 +2,9 @@ import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telegraph import upload_file
+from pyromod import listen
+from PIL import Image
+from music_tag import load_file
 
 Bot = Client(
     "Info Bot",
@@ -189,8 +192,8 @@ async def telegraph(client, message):
         await message.reply(message, text=document)
     else:
         await message.reply(
-            f"**Uploaded To Telegraph!\n\n👉 https://telegra.ph{response[0]}**",
-            disable_web_page_preview=false,
+            f"**Uploaded To Telegraph!\n\n👉 https://telegra.ph{response[0]}**  [Your link](https://telegra.ph{response[0]}) ",
+            disable_web_page_preview=true,
         )
     finally:
         os.remove(download_location)

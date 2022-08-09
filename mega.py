@@ -50,12 +50,16 @@ BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"ht
                                 [InlineKeyboardButton(text="Share BoT", url=f"https://t.me/share/url?url=https%3A//t.me/MutyalaBoT"),
                                  InlineKeyboardButton(text="Group", url=f"http://t.me/MutyalaBoT?startgroup=true")]])
 
+STRBUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Add Me To Group", url=f"http://t.me/MutyalaBoT?startgroup=true")],
+                                [InlineKeyboardButton(text="help", callback_data='help'),
+                                 InlineKeyboardButton(text="close", callback_data='close')]])
+
 @Bot.on_message(filters.private & filters.command("start"))
 async def start(bot, update):
     await update.reply_photo(
         photo="https://telegra.ph/file/236794ce4bb2213eaae1e.jpg",
         caption=START_TEXT.format(update.from_user.mention),
-        reply_markup=BUTTONS
+        reply_markup=STRBUTTONS
     )
 
 

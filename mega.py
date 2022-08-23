@@ -52,7 +52,32 @@ BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"ht
 
 STRBUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Add Me To Group", url=f"http://t.me/MutyalaBoT?startgroup=true")],
                                 [InlineKeyboardButton(text="help", callback_data='help'),
-                                 InlineKeyboardButton(text="close", callback_data='close')]])
+                                 InlineKeyboardButton(text="about", callback_data='about')]])
+
+
+@Bot.on_callback_query()
+async def cb_handler(bot, update):
+    if update.data == "home":
+        await update.message.edit_text(
+            text=START_TEXT.format(update.from_user.mention),
+            reply_markup=BUTTONS,
+            disable_web_page_preview=True
+        )
+    elif update.data == "cmds":
+        await update.message.edit_text(
+            text=ABOUT_TEX,
+            reply_markup=CMDS_BUTTONS,
+            disable_web_page_preview=True
+        )
+    elif update.data == "about":
+        await update.message.edit_text(
+            text=ABOUT_TEXT,
+            reply_markup=BUTTONS,
+            disable_web_page_preview=True
+        )
+    else:
+        await update.message.delete()
+
 
 @Bot.on_message(filters.private & filters.command("start"))
 async def start(bot, update):
@@ -65,11 +90,10 @@ async def start(bot, update):
 
 @Bot.on_message(filters.private & filters.command("help"))
 async def help(bot, update):
-    if update.data == "home":
-        await update.reply_text(
-              text=HELP_TEXT,
-              disable_web_page_preview=True,
-              reply_markup=BUTTONS
+    await update.reply_text(
+        text=HELP_TEXT,
+        disable_web_page_preview=True,
+        reply_markup=BUTTONS
     )
 
 

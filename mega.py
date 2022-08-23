@@ -51,7 +51,7 @@ BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"ht
                                  InlineKeyboardButton(text="Group", url=f"http://t.me/MutyalaBoT?startgroup=true")]])
 
 STRBUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Add Me To Group", url=f"http://t.me/MutyalaBoT?startgroup=true")],
-                                [InlineKeyboardButton(text="help", callback_data='HELP_TEXT'),
+                                [InlineKeyboardButton(text="help", callback_data='help'),
                                  InlineKeyboardButton(text="close", callback_data='close')]])
 
 @Bot.on_message(filters.private & filters.command("start"))
@@ -65,6 +65,7 @@ async def start(bot, update):
 
 @Bot.on_message(filters.private & filters.command("help"))
 async def help(bot, update):
+    if update.data == "home":
     await update.reply_text(
         text=HELP_TEXT,
         disable_web_page_preview=True,

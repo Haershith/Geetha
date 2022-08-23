@@ -66,10 +66,10 @@ async def start(bot, update):
 @Bot.on_message(filters.private & filters.command("help"))
 async def help(bot, update):
     if update.data == "home":
-    await update.reply_text(
-        text=HELP_TEXT,
-        disable_web_page_preview=True,
-        reply_markup=BUTTONS
+        await update.reply_text(
+              text=HELP_TEXT,
+              disable_web_page_preview=True,
+              reply_markup=BUTTONS
     )
 
 

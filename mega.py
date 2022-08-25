@@ -48,8 +48,8 @@ BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"ht
                                  InlineKeyboardButton(text="Group", url=f"http://t.me/MutyalaBoT?startgroup=true")]])
 
 STRBUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Add Me To Group 💞", url=f"http://t.me/MutyalaBoT?startgroup=true")],
-                                [InlineKeyboardButton(text="🥳 Channel", url=f"https://t.me/MutyalaHarshith),
-                                 InlineKeyboardButton(text="🤪 Support", url=f"https://t.me/MHGCHAT)]])
+                                [InlineKeyboardButton(text="🥳 Channel", url=f"https://t.me/MutyalaHarshith"),
+                                 InlineKeyboardButton(text="🤪 Support", url=f"https://t.me/MHGCHAT")]])
                                 [InlineKeyboardButton(text="😂 Help", callback_data='help'),
                                  InlineKeyboardButton(text="😜 About", callback_data='about')]])
 

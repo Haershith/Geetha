@@ -2,9 +2,6 @@ import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telegraph import upload_file
-from pyromod import listen
-from PIL import Image
-from music_tag import load_file
 
 Bot = Client(
     "Info Bot",
@@ -18,7 +15,7 @@ I ᴀᴍ Iᴅ Fᴇᴛᴄʜ Bᴏᴛ ʙʏ Hᴀʀsʜɪᴛʜ
 I ᴄᴀɴ sʜᴏᴡ ʏᴏᴜʀ ɪᴅ & ɪɴғᴏ
 Fᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴄʟɪᴄᴋ /help
 
-Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ<b>"""
+[Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ](https://t.me/MutyalaHarshith)<b>"""
 
 HELP_TEXT = """**💞 Hᴏᴡ ᴛᴏ Usᴇ 💞**
 I ᴄᴀɴ ʜᴇʟᴘ ᴄᴀɴ Fᴇᴛᴄʜ ɪᴅ ᴏғ ʏᴏᴜ
@@ -32,7 +29,7 @@ Cʟɪᴄᴋ /ɪɴғᴏ ᴏғ ᴛᴏ ɢᴇᴛ 👇👇
 • Tᴏ ɢᴇᴛ sᴛɪᴄᴋᴇʀ ɪᴅ ᴀɴᴅ Uɴɪǫᴜᴇ ID
 
 
-Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ
+[Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ](https://t.me/MutyalaHarshith)
 """
 
 ABOUT_TEXT = """**Aʙᴏᴜᴛ Yᴏᴜsᴇʟғ**
@@ -45,14 +42,16 @@ ABOUT_TEXT = """**Aʙᴏᴜᴛ Yᴏᴜsᴇʟғ**
 • **Lɪʙʀᴀʀʏ :** [Pʏʀᴏɢʀᴀᴍ ᴠ𝟷.𝟸.𝟶](https://pyrogram.org)
 • **Sᴇʀᴠᴇʀ :** [Hᴇʀᴏᴋᴜ](https://heroku.com)"""
 
-BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/MutyalaHarshith"),
-                                 InlineKeyboardButton(text="Support", url=f"https://t.me/MHGcHaT")],
-                                [InlineKeyboardButton(text="Share BoT", url=f"https://t.me/share/url?url=https%3A//t.me/MutyalaBoT"),
+BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/MutyalaHarshith")],
+                                [InlineKeyboardButton(text="HoME", callback_data='home'),
+                                 InlineKeyboardButton(text="about", callback_data='about'),
                                  InlineKeyboardButton(text="Group", url=f"http://t.me/MutyalaBoT?startgroup=true")]])
 
-STRBUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Add Me To Group", url=f"http://t.me/MutyalaBoT?startgroup=true")],
-                                [InlineKeyboardButton(text="help", callback_data='help'),
-                                 InlineKeyboardButton(text="about", callback_data='about')]])
+STRBUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Add Me To Group 💞", url=f"http://t.me/MutyalaBoT?startgroup=true")],
+                                [InlineKeyboardButton(text="🥳 Channel", url=f"https://t.me/MutyalaHarshith),
+                                 InlineKeyboardButton(text="🤪 Support", url=f"https://t.me/MHGCHAT)]])
+                                [InlineKeyboardButton(text="😂 Help", callback_data='help'),
+                                 InlineKeyboardButton(text="😜 About", callback_data='about')]])
 
 
 @Bot.on_callback_query()
@@ -63,10 +62,10 @@ async def cb_handler(bot, update):
             reply_markup=BUTTONS,
             disable_web_page_preview=True
         )
-    elif update.data == "cmds":
+    elif update.data == "help":
         await update.message.edit_text(
-            text=ABOUT_TEX,
-            reply_markup=CMDS_BUTTONS,
+            text=HELP_TEXT,
+            reply_markup=BUTTONS,
             disable_web_page_preview=True
         )
     elif update.data == "about":
@@ -228,43 +227,6 @@ async def telegraph(client, message):
         os.remove(download_location)
 
    
-@Bot.on_message(filters.private & filters.audio)
-async def tag(bot, m):
-    mes = await m.reply("`Downloading...`", parse_mode='md')
-    await m.download(f"temp/{m.audio.file_name}.mp3")
-    music = load_file(f"temp/{m.audio.file_name}.mp3")
-
-    try:
-        artwork = music['artwork']
-        image_data = artwork.value.data
-        img = Image.open(io.BytesIO(image_data))
-        img.save("temp/artwork.jpg")
-    except ValueError:
-        image_data = None
-
-    await mes.delete()
-    fname = await bot.ask(m.chat.id,'`Send the Filename`', filters=filters.text, parse_mode='Markdown')
-    title = await bot.ask(m.chat.id,'`Send the Title name`', filters=filters.text, parse_mode='Markdown')
-    artist = await bot.ask(m.chat.id,'`Send the Artist(s) name`', filters=filters.text, parse_mode='Markdown')
-    answer = await bot.ask(m.chat.id,'`Send the Artwork or` /skip', filters=filters.photo | filters.text, parse_mode='Markdown')
-    music.remove_tag('artist')
-    music.remove_tag('title')
-    music['artist'] = artist.text
-    music['title'] = title.text
-
-    if answer.photo:
-        await bot.download_media(message=answer.photo, file_name="temp/artwork.jpg")
-        music.remove_tag('artwork')
-        with open('temp/artwork.jpg', 'rb') as img_in:
-            music['artwork'] = img_in.read()
-    music.save()
-
-    try:
-        await bot.send_audio(chat_id=m.chat.id, file_name=fname.text, performer=artist.text, title=title.text, duration=m.audio.duration, audio=f"temp/{m.audio.file_name}.mp3", thumb='temp/artwork.jpg' if answer.photo or image_data else None)
-    except Exception as e:
-        print(e)
-        return
-    os.remove(f"temp/{m.audio.file_name}.mp3")
 
 
 print("✨✨ Start BoT By Created Mutyala Harshith ✨✨")

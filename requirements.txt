@@ -2,5 +2,6 @@ pyrogram
 tgcrypto
 telegraph
 pyromod
-music_tag
 Pillow
+youtube_search_python
+youtube_search

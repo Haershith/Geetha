@@ -81,7 +81,7 @@ async def cb_handler(bot, update):
         await update.message.delete()
 
 @Bot.on_inline_query()
-async def inline(client: Client, query: InlineQuery):
+async def inline(client: Client, query: inlinequery):
     answers = []
     search_query = query.query.lower().strip().rstrip()
 

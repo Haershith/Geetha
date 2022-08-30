@@ -2,6 +2,9 @@ import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telegraph import upload_file
+from youtube_search import YoutubeSearch
+from youtubesearchpython import VideosSearch
+
 
 Bot = Client(
     "Info Bot",

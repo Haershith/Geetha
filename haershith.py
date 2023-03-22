@@ -45,15 +45,20 @@ ABOUT_TEXT = """**Aʙᴏᴜᴛ Yᴏᴜsᴇʟғ**
 • **Sᴇʀᴠᴇʀ :** [Render](https://Render.com)"""
 
 BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/Haershith")],
-                                [InlineKeyboardButton(text="HoME", callback_data='home'),
-                                 InlineKeyboardButton(text="About", callback_data='about'),
-                                 InlineKeyboardButton(text="Group", url=f"http://t.me/MutyalaBoT?startgroup=true")]])
+                                [InlineKeyboardButton(text="🏠 Home", callback_data='home'),
+                                 InlineKeyboardButton(text="🤞 About", callback_data='about'),
+                                 InlineKeyboardButton(text="🤩 Group", url=f"http://t.me/HaershithBoT?startgroup=true")]])
 
-STRBUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Add Me To Group 💞", url=f"http://t.me/MutyalaBoT?startgroup=true")],
+STRBUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Add Me To Group 💞", url=f"http://t.me/HaershithBoT?startgroup=true")],
                                 [InlineKeyboardButton(text="🥳 Channel", url=f"https://t.me/Haershith"),
                                  InlineKeyboardButton(text="🤪 Support", url=f"https://t.me/MHGCHAT")],
                                 [InlineKeyboardButton(text="😂 Help", callback_data='help'),
                                  InlineKeyboardButton(text="😜 About", callback_data='about')]])
+
+ABUT = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/Haershith")],
+                                [InlineKeyboardButton(text="🏠 Home", callback_data='home'),
+                                 InlineKeyboardButton(text="🤞 Help", callback_data='help'),
+                                 InlineKeyboardButton(text="🤩 Group", url=f"http://t.me/HaershithBoT?startgroup=true")]])
 
 
 @Bot.on_callback_query()
@@ -61,7 +66,7 @@ async def cb_handler(bot, update):
     if update.data == "home":
         await update.message.edit_text(
             text=START_TEXT.format(update.from_user.mention),
-            reply_markup=BUTTONS,
+            reply_markup=STRBUTTONS,
             disable_web_page_preview=True
         )
     elif update.data == "help":
@@ -73,7 +78,7 @@ async def cb_handler(bot, update):
     elif update.data == "about":
         await update.message.edit_text(
             text=ABOUT_TEXT,
-            reply_markup=BUTTONS,
+            reply_markup=ABUT,
             disable_web_page_preview=True
         )
     else:
@@ -102,11 +107,11 @@ async def about(bot, update):
     await update.reply_text(
         text=ABOUT_TEXT,
         disable_web_page_preview=True,
-        reply_markup=BUTTONS
+        reply_markup=ABUT
     )
 
 
-@Bot.on_message(filters.private & filters.command("mhinfo"))
+@Bot.on_message(filters.private & filters.command("info"))
 async def info(bot, update):
     
     text = f"""--**Information from Harshith**--

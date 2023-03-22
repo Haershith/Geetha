@@ -18,7 +18,7 @@ I ᴀᴍ Iᴅ Fᴇᴛᴄʜ Bᴏᴛ ʙʏ Hᴀʀsʜɪᴛʜ
 I ᴄᴀɴ sʜᴏᴡ ʏᴏᴜʀ ɪᴅ & ɪɴғᴏ
 Fᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴄʟɪᴄᴋ /help
 
-[Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ](https://t.me/MutyalaHarshith)<b>"""
+[Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ](https://t.me/Haershith)<b>"""
 
 HELP_TEXT = """**💞 Hᴏᴡ ᴛᴏ Usᴇ 💞**
 I ᴄᴀɴ ʜᴇʟᴘ ᴄᴀɴ Fᴇᴛᴄʜ ɪᴅ ᴏғ ʏᴏᴜ
@@ -36,22 +36,21 @@ Cʟɪᴄᴋ /ɪɴғᴏ ᴏғ ᴛᴏ ɢᴇᴛ 👇👇
 """
 
 ABOUT_TEXT = """**Aʙᴏᴜᴛ Yᴏᴜsᴇʟғ**
-• **Bᴏᴛ ɴᴀᴍᴇ:** [MHɪNFᴏBᴏT](https://t.me/MutyalaBoT)
+• **Bᴏᴛ ɴᴀᴍᴇ:** [MᴜᴛʏᴀʟᴀBᴏT](https://t.me/MutyalaBoT)
 • **Cʀᴇᴀᴛᴏʀ :** [Mᴜᴛʏᴀʟᴀ Hᴀʀsʜɪᴛʜ](https://t.me/MutyalaHarshith)
-• **GɪᴛHᴜʙ** : [Fᴏʟʟᴏᴡ](https://GitHub.com/MutyalaHarshith)
-• **Sᴏᴜʀᴄᴇ** : [MHɪNFᴏBᴏT](https://github.com/TeleGraMaN/MHiNFoBoT)
+• **GɪᴛHᴜʙ** : [卄α૨รɦเƭɦ](https://GitHub.com/MutyalaHarshith)
 • **Sᴜᴘᴘᴏʀᴛ** : [ᴍʜɢᴄʜᴀᴛ](https://t.me/MHGcHaT)
 • **Lᴀɴɢᴜᴀɢᴇ :** [Pʏᴛʜᴏɴ 𝟹](https://python.org)
 • **Lɪʙʀᴀʀʏ :** [Pʏʀᴏɢʀᴀᴍ ᴠ𝟷.𝟸.𝟶](https://pyrogram.org)
-• **Sᴇʀᴠᴇʀ :** [Hᴇʀᴏᴋᴜ](https://heroku.com)"""
+• **Sᴇʀᴠᴇʀ :** [Render](https://Render.com)"""
 
-BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/MutyalaHarshith")],
+BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Join", url=f"https://t.me/Haershith")],
                                 [InlineKeyboardButton(text="HoME", callback_data='home'),
-                                 InlineKeyboardButton(text="about", callback_data='about'),
+                                 InlineKeyboardButton(text="About", callback_data='about'),
                                  InlineKeyboardButton(text="Group", url=f"http://t.me/MutyalaBoT?startgroup=true")]])
 
 STRBUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(text="💞 Add Me To Group 💞", url=f"http://t.me/MutyalaBoT?startgroup=true")],
-                                [InlineKeyboardButton(text="🥳 Channel", url=f"https://t.me/MutyalaHarshith"),
+                                [InlineKeyboardButton(text="🥳 Channel", url=f"https://t.me/Haershith"),
                                  InlineKeyboardButton(text="🤪 Support", url=f"https://t.me/MHGCHAT")],
                                 [InlineKeyboardButton(text="😂 Help", callback_data='help'),
                                  InlineKeyboardButton(text="😜 About", callback_data='about')]])
@@ -163,9 +162,9 @@ async def info(bot, update):
 **🥳 Your Username :** {update.from_user.username}
 **😜 Your Telegram ID :** {update.from_user.id}
 **🤫 Your Profile Link :** {update.from_user.mention}
-** Bio :** {update.from_user.mention}
-** Lang code :** {update.from_user.language_code}
-** Language :** {update.from_user.first_name} """
+**🤔 Bio :** {update.from_user.mention}
+**🤞 Lang code :** {update.from_user.language_code}
+**🥳 Language :** {update.from_user.first_name} """
     
     await update.reply_text(        
         text=text,
@@ -174,7 +173,7 @@ async def info(bot, update):
     )
 
 
-@Bot.on_message(filters.private & filters.command("mhid"))
+@Bot.on_message(filters.private & filters.command("id"))
 async def id(bot, update):
     await update.reply_text(        
         text=f"💞 **Your Telegram ID :** {update.from_user.id}",
